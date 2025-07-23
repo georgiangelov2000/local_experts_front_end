@@ -48,8 +48,8 @@ export default function ListElement({ provider, likes, dislikes, favourites }) {
               <div className="w-32 h-32 rounded-xl overflow-hidden bg-gray-100">
                 <img
                   src={
-                    provider.media.length > 0
-                      ? provider.media[0].url
+                    provider.media // Check if provider.media has a truthy value (not empty string, null, or undefined)
+                      ? provider.media
                       : 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
                   }
                   alt={provider.business_name}

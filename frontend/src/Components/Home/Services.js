@@ -10,7 +10,7 @@ import Categories from './Categories';
 import { useAuth } from '../../Context/AuthContext';
 import SEO from '../Auth/Shared/SEO';
 import { useLocation } from 'react-router-dom';
-import { FiGrid, FiList, FiSearch, FiFilter } from 'react-icons/fi';
+import { FiSearch, FiFilter } from 'react-icons/fi';
 import { FaSpinner } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 
