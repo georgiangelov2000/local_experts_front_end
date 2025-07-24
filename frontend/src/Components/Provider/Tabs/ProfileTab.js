@@ -36,13 +36,13 @@ export default function ProfileTab({ provider }) {
             {provider.contact.phone && (
               <div className="flex items-center">
                 <FiPhone className="text-gray-500 text-lg mr-2" />
-                <span className="text-sm text-gray-700 font-medium">{provider.contact.phone}</span>
+                <span className="text-sm text-gray-700 font-light">{provider.contact.phone}</span>
               </div>
             )}
             {provider.contact.email && (
               <div className="flex items-center">
                 <FiMail className="text-gray-500 text-lg mr-2" />
-                <span className="text-sm text-gray-700 font-medium">{provider.contact.email}</span>
+                <span className="text-sm text-gray-700 font-light">{provider.contact.email}</span>
               </div>
             )}
             {provider.contact.website && (
@@ -61,7 +61,7 @@ export default function ProfileTab({ provider }) {
             {provider.contact.address && (
               <div className="flex items-center">
                 <FiMapPin className="text-gray-500 text-lg mr-2" />
-                <span className="text-sm text-gray-700 font-medium">{provider.contact.address}</span>
+                <span className="text-sm text-gray-700 font-light">{provider.contact.address}</span>
               </div>
             )}
             {provider.contact.facebook && (

@@ -152,7 +152,7 @@ export default function SearchBar({ state, dispatch, setSearchParams }) {
               isMulti
               formatOptionLabel={(data) => (
                 <div className="flex items-center gap-2">
-                  <FiMapPin className="text-blue-500" />
+                  <FiMapPin/>
                   <span>{data.label}</span>
                 </div>
               )}
@@ -178,7 +178,7 @@ export default function SearchBar({ state, dispatch, setSearchParams }) {
               isClearable
               formatOptionLabel={(data) => (
                 <div className="flex items-center gap-2">
-                  <FiLayers className="text-green-500" />
+                  <FiLayers />
                   <span>{data.label}</span>
                 </div>
               )}
@@ -275,13 +275,13 @@ export default function SearchBar({ state, dispatch, setSearchParams }) {
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-sm font-semibold text-gray-700 uppercase tracking-wide flex items-center">
               <FiFilter className="mr-2 text-blue-500" />
-              Active Filters
+              {t('active_filters')}
             </h3>
             <button
               onClick={clearFilters}
               className="text-xs text-blue-600 hover:text-blue-800 font-medium cursor-pointer"
             >
-              Clear All
+              {t('clear_all')}
             </button>
           </div>
           <div className="flex flex-wrap gap-2">
