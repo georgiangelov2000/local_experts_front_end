@@ -191,7 +191,7 @@
   "optional": "optional",
   "no_contact_info": "No contact information available",
   "valid_advert": "Active until",
-  "no_locations": "No locations available",  
+  "no_locations": "No locations available",
   "sort": {
     "promoted": "Promoted First",
     "reviews_desc": "Reviews: High to Low",
@@ -200,5 +200,39 @@
     "views_asc": "Views: Low to High",
     "likes_desc": "Likes: High to Low",
     "likes_asc": "Likes: Low to High"
+  },
+  "footer": {
+    "brand_name": "Local Experts",
+    "tagline": "Find Your Perfect Match",
+    "description": "Connect with trusted local service providers for your needs, anywhere and anytime.",
+    "social": "Social media",
+    "quick_links": "Quick Links",
+    "links": {
+      "home": "Home",
+      "favourites": "Favourites",
+      "profile": "My Profile",
+      "how_it_works": "How It Works",
+      "success_stories": "Success Stories"
+    },
+    "services": "Services",
+    "service_list": {
+      "home_services": "Home Services",
+      "professional_services": "Professional Services",
+      "health_wellness": "Health & Wellness",
+      "education_training": "Education & Training",
+      "tech_services": "Technology Services"
+    },
+    "contact_us": "Contact Us",
+    "address": "123 Business Ave, Suite 100\nCity, State 12345",
+    "stay_updated": "Stay Updated",
+    "email_placeholder": "Email address",
+    "nav": {
+      "home": "Home",
+      "favs": "Favs",
+      "profile": "Profile",
+      "policy": "Policy"
+    },
+    "copyright": "Local Experts. Made with",
+    "for_community": "for our community."
   }
-} 
+}
