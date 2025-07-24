@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiLogIn, FiUserPlus, FiHeart, FiHome, FiUser, FiLogOut, FiMenu, FiX, FiSearch, FiBell, FiSettings } from 'react-icons/fi';
+import { FiLogIn, FiUserPlus, FiHeart, FiHome, FiUser, FiLogOut, FiMenu, FiX } from 'react-icons/fi';
 import { useAuth } from "../Context/AuthContext";
 import { useTranslation } from 'react-i18next';
 import i18n from '../locales/i18n';
 
 export default function Header() {
-  const { user, logout, isAuthenticated } = useAuth();
+  const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
@@ -201,7 +201,12 @@ export default function Header() {
                   value={i18n.language}
                   onChange={e => i18n.changeLanguage(e.target.value)}
                   className="appearance-none pl-8 pr-6 py-1 rounded border border-gray-300 text-sm bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-200 shadow-sm hover:border-blue-400 transition-all duration-150 w-full"
-                  style={{ backgroundImage: `url('data:image/svg+xml;utf8,<svg fill=\'gray\' height=\'20\' viewBox=\'0 0 20 20\' width=\'20\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5H7z\'/></svg>')`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 0.5rem center', backgroundSize: '1.25em' }}
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml;utf8,<svg fill='gray' height='20' viewBox='0 0 20 20' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5H7z'/></svg>")`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'right 0.5rem center',
+                    backgroundSize: '1.25em'
+                  }}
                 >
                   {languageOptions.map(opt => (
                     <option key={opt.value} value={opt.value}>

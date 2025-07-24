@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { FiGrid, FiTrendingUp, FiUsers, FiStar } from 'react-icons/fi';
+import { FiGrid, FiUsers, FiStar } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 export default function Categories({ categories }) {

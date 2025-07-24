@@ -3,7 +3,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import { useRef, useState } from 'react';
 
 export default function Profile({ user, data }) {
-  const { register, handleSubmit, formState: { errors, isSubmitting, isSubmitSuccessful }, onSubmit, avatar, setValue } = useBasicForm(user);
+  const { register, handleSubmit, formState: { errors, isSubmitting, isSubmitSuccessful }, onSubmit, setValue } = useBasicForm(user);
   const [avatarPreview, setAvatarPreview] = useState(user.avatar || '');
   const fileInputRef = useRef();
 

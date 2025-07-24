@@ -1,11 +1,9 @@
 import SEO from '../Components/Auth/Shared/SEO';
 import { Link } from "react-router-dom";
-import { useState, useEffect, useRef, forwardRef } from 'react';
+import { useState, useEffect, forwardRef } from 'react';
 import apiService from '../Services/apiService';
 import { FiMail, FiLock, FiKey, FiBriefcase } from 'react-icons/fi';
-import { FaFacebook } from 'react-icons/fa';
 import { useRegisterForm } from "../Models/useRegisterForm";
-import { FcGoogle } from 'react-icons/fc';
 import { useTranslation } from 'react-i18next';
 
 // FloatingInput component for modern floating label input fields
@@ -34,7 +32,7 @@ export default function Register() {
   const [serviceCategories, setServiceCategories] = useState([]);
   const [loadingServiceCategories, setLoadingServiceCategories] = useState(false);
   const [socialLoading, setSocialLoading] = useState(false);
-  const socialPopupRef = useRef(null);
+  // const socialPopupRef = useRef(null);
 
   const { t } = useTranslation();
 
@@ -102,34 +100,34 @@ export default function Register() {
       });
   };
 
-  const handleSocialRegister = (provider) => {
-    setSocialLoading(true);
-    const width = 500;
-    const height = 600;
-    const left = window.screenX + (window.outerWidth - width) / 2;
-    const top = window.screenY + (window.outerHeight - height) / 2;
-    const url = `http://localhost:8000/api/v1/auth/${provider}/redirect`;
-    const popup = window.open(url, 'socialLogin', `width=${width},height=${height},left=${left},top=${top}`);
-    socialPopupRef.current = popup;
-    const handleMessage = (event) => {
-      if (event.origin !== 'http://localhost:8000') return;
-      const { email_exists, profile, error } = event.data;
-      setSocialLoading(false);
-      if (email_exists) {
-        setMessage({ text: error || t('email_already_registered'), type: 'error' });
-      } else if (profile) {
-        setTab('user');
-        userForm.reset({
-          username: profile.name || '',
-          email: profile.email || '',
-        });
-        setMessage({ text: t('social_profile_loaded'), type: 'success' });
-      }
-      window.removeEventListener('message', handleMessage);
-      if (socialPopupRef.current) socialPopupRef.current.close();
-    };
-    window.addEventListener('message', handleMessage);
-  };
+  // const handleSocialRegister = (provider) => {
+  //   setSocialLoading(true);
+  //   const width = 500;
+  //   const height = 600;
+  //   const left = window.screenX + (window.outerWidth - width) / 2;
+  //   const top = window.screenY + (window.outerHeight - height) / 2;
+  //   const url = `http://localhost:8000/api/v1/auth/${provider}/redirect`;
+  //   const popup = window.open(url, 'socialLogin', `width=${width},height=${height},left=${left},top=${top}`);
+  //   socialPopupRef.current = popup;
+  //   const handleMessage = (event) => {
+  //     if (event.origin !== 'http://localhost:8000') return;
+  //     const { email_exists, profile, error } = event.data;
+  //     setSocialLoading(false);
+  //     if (email_exists) {
+  //       setMessage({ text: error || t('email_already_registered'), type: 'error' });
+  //     } else if (profile) {
+  //       setTab('user');
+  //       userForm.reset({
+  //         username: profile.name || '',
+  //         email: profile.email || '',
+  //       });
+  //       setMessage({ text: t('social_profile_loaded'), type: 'success' });
+  //     }
+  //     window.removeEventListener('message', handleMessage);
+  //     if (socialPopupRef.current) socialPopupRef.current.close();
+  //   };
+  //   window.addEventListener('message', handleMessage);
+  // };
 
   return (
     <div className="min-h-screen flex justify-center items-center p-4">
@@ -145,7 +143,6 @@ export default function Register() {
             className={`flex-1 py-3 px-2 rounded-l-xl text-lg font-semibold transition-all duration-200 ${tab === 'user' ? 'bg-blue-600 text-white shadow' : 'bg-gray-100 text-gray-600 hover:bg-blue-50'}`}
             onClick={() => handleTab('user')}
             type="button"
-            aria-selected={tab === 'user'}
           >
             {t('registerAsUser')}
           </button>
@@ -153,7 +150,6 @@ export default function Register() {
             className={`flex-1 py-3 px-2 rounded-r-xl text-lg font-semibold transition-all duration-200 ${tab === 'provider' ? 'bg-blue-600 text-white shadow' : 'bg-gray-100 text-gray-600 hover:bg-blue-50'}`}
             onClick={() => handleTab('provider')}
             type="button"
-            aria-selected={tab === 'provider'}
           >
             {t('registerAsProvider')}
           </button>

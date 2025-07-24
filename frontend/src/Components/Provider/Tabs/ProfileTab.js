@@ -1,4 +1,4 @@
-import { FiPhone, FiMapPin, FiMail, FiGlobe, FiAward, FiExternalLink, FiCheckCircle, FiPackage, FiDollarSign, FiInfo, FiUser, FiFacebook, FiInstagram } from 'react-icons/fi';
+import { FiPhone, FiMapPin, FiMail, FiGlobe, FiExternalLink, FiFacebook, FiInstagram } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 export default function ProfileTab({ provider }) {

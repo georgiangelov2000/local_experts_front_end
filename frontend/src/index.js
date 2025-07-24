@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HelmetProvider } from 'react-helmet-async';
-
 import { I18nextProvider } from 'react-i18next';
 import i18n from './locales/i18n';
+import './index.css'; 
+import 'flowbite'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

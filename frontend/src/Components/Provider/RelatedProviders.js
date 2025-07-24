@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
-import { FiEye, FiThumbsUp, FiThumbsDown, FiMapPin, FiArrowRight } from "react-icons/fi";
+import { FiMapPin, FiArrowRight } from "react-icons/fi";
 import { useTranslation } from 'react-i18next';
 
 export default function RelatedProviders({ providers = [] }) {

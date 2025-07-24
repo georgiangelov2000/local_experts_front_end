@@ -11,7 +11,7 @@ export default function Login() {
   const { user, authChecked, login } = useAuth();
   const navigate = useNavigate();
   const [submitError, setSubmitError] = useState("");
-  const { register, handleSubmit, errors, reset } = useLoginForm();
+  const { register, handleSubmit, errors } = useLoginForm();
   const { t } = useTranslation();
 
   useEffect(() => {
