@@ -7,6 +7,7 @@ import Pagination from '../Home/List/Pagination';
 import ReviewsSkeleton from './ReviewsSkeleton';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 export default function Reviews({ reviews = [], serviceProviderId, onReviewAdded, pagination, onPageChange, reviewsLoading, reviewsError }) {
   const { user } = useAuth();
@@ -285,9 +286,9 @@ export default function Reviews({ reviews = [], serviceProviderId, onReviewAdded
             <FiMessageSquare className="mx-auto text-gray-400 text-3xl mb-3" />
             <h4 className="text-lg font-medium text-gray-900 mb-2">{t('want_to_share_experience')}</h4>
             <p className="text-gray-600 mb-4">{t('login_to_add_review')}</p>
-            <button className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
+            <Link to={`/login`} className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors">
               {t('login_to_review')}
-            </button>
+            </Link>
           </div>
         </div>
       )}

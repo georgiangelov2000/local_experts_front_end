@@ -189,5 +189,16 @@
   "certification_link": "Certificate Link",
   "certification_link_placeholder": "Paste a verification or info link (optional)",
   "optional": "optional",
-  "no_contact_info": "No contact information available"
+  "no_contact_info": "No contact information available",
+  "valid_advert": "Active until",
+  "no_locations": "No locations available",  
+  "sort": {
+    "promoted": "Promoted First",
+    "reviews_desc": "Reviews: High to Low",
+    "reviews_asc": "Reviews: Low to High",
+    "views_desc": "Views: High to Low",
+    "views_asc": "Views: Low to High",
+    "likes_desc": "Likes: High to Low",
+    "likes_asc": "Likes: Low to High"
+  }
 } 

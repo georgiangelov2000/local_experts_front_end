@@ -90,23 +90,23 @@ export default function Provider() {
               <ProviderContact contact={provider.contact} />
             </div>
           </div>
-          <div>
-            <div className="flex items-center mb-3">
-              <img
-                src="https://randomuser.me/api/portraits/men/75.jpg"
-                alt="John Doe"
-                className="w-12 h-12 rounded-full object-cover mr-3"
-              />
-              <div>
-                <p className="text-sm font-semibold text-gray-800">John Doe</p>
-                <p className="text-xs text-gray-500">john.doe@example.com</p>
+            {/* <div>
+              <div className="flex items-center mb-3">
+                <img
+                  src="https://randomuser.me/api/portraits/men/75.jpg"
+                  alt="John Doe"
+                  className="w-12 h-12 rounded-full object-cover mr-3"
+                />
+                <div>
+                  <p className="text-sm font-semibold text-gray-800">John Doe</p>
+                  <p className="text-xs text-gray-500">john.doe@example.com</p>
+                </div>
               </div>
-            </div>
-            <div className="text-xs text-gray-600">
-              {t('logged_in_with')}:
-              <span className="ml-1 font-medium text-blue-600">{t('facebook')}</span>
-            </div>
-          </div>
+              <div className="text-xs text-gray-600">
+                {t('logged_in_with')}:
+                <span className="ml-1 font-medium text-blue-600">{t('facebook')}</span>
+              </div>
+            </div> */}
         </div>
 
         {/* Tabs */}

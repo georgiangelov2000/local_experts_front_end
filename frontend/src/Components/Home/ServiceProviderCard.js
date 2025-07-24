@@ -4,6 +4,7 @@ import { FaStar, FaRegStar, FaStarHalfAlt, FaHeart, FaThumbsUp, FaThumbsDown } f
 import useProviderActions from "../../Hooks/useProviderActions";
 import { useAuth } from "../../Context/AuthContext";
 import { useTranslation } from 'react-i18next';
+import { format, isSameDay } from "date-fns";
 
 export default function ServiceProviderCard({
   provider,
@@ -26,7 +27,7 @@ export default function ServiceProviderCard({
     const fullStars = Math.floor(rating || 0);
     const halfStar = (rating || 0) - fullStars >= 0.5;
     const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-    
+
     return (
       <div className="flex items-center">
         {Array.from({ length: fullStars }).map((_, i) => (
@@ -59,10 +60,10 @@ export default function ServiceProviderCard({
             }
             alt={provider.business_name}
           />
-          
+
           {/* Overlay Gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          
+
           {/* Top Badges */}
           <div className="absolute top-3 left-5 flex flex-col space-y-2">
             {provider.service_category && (
@@ -104,10 +105,15 @@ export default function ServiceProviderCard({
           {/* Working Hours & Last Login */}
           <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500 mt-1">
             <div className="flex items-center">
-              <span>{t('start_time')}: {provider.start_time || '-'}</span>
-            </div>
-            <div className="flex items-center">
-              <span>{t('stop_time')}: {provider.stop_time || '-'}</span>
+              <span>
+                {t('valid_advert')}: {
+                  provider.start_time && provider.stop_time
+                    ? isSameDay(new Date(provider.start_time), new Date(provider.stop_time))
+                      ? `${format(new Date(provider.start_time), 'dd MMM')}: ${format(new Date(provider.start_time), 'HH:mm')} - ${format(new Date(provider.stop_time), 'HH:mm')}`
+                      : `${format(new Date(provider.start_time), 'dd MMM, HH:mm')} - ${format(new Date(provider.stop_time), 'dd MMM, HH:mm')}`
+                    : t('not_available')
+                }
+              </span>
             </div>
             <div className="flex items-center">
               <span>{t('last_logged_in')}: {provider.last_logged_in ? new Date(provider.last_logged_in).toLocaleString() : '-'}</span>
@@ -139,8 +145,9 @@ export default function ServiceProviderCard({
             <div className="flex items-center text-xs text-gray-500">
               <FiMapPin className="mr-1 text-gray-400" />
               <span className="truncate">
-                {provider.locations.slice(0, 2).join(', ')}
-                {provider.locations.length > 2 && ` +${provider.locations.length - 2} ${t('location').toLowerCase()}`}
+                {provider.locations && provider.locations.length > 0
+                  ? provider.locations.join(', ')
+                  : t('no_locations')}
               </span>
             </div>
           )}
@@ -156,7 +163,7 @@ export default function ServiceProviderCard({
             </div>
 
             {/* Views */}
-            <div className="flex items-center text-xs text-gray-500">
+            <div className="flex items-center text-xs text-gray-500 mb-2">
               <FiEye className="mr-1" />
               {provider.views_count ?? 0} {t('views')}
             </div>
@@ -215,7 +222,7 @@ export default function ServiceProviderCard({
               </>
             )}
           </div>
-          
+
           <button
             aria-label={isFavourite ? 'Remove from favorites' : 'Add to favorites'}
             onClick={toggleFavourite}

@@ -3,6 +3,7 @@ import { FiMapPin, FiLayers, FiList, FiSearch, FiX, FiFilter, FiSliders } from '
 import { useCallback } from 'react';
 import debounce from 'lodash.debounce';
 import { useTranslation } from 'react-i18next';
+import SortSelect from './List/SortSelect';
 
 export default function SearchBar({ state, dispatch, setSearchParams }) {
 
@@ -146,7 +147,7 @@ export default function SearchBar({ state, dispatch, setSearchParams }) {
                   }
                 });
               }}
-              placeholder="Select cities..."
+              placeholder={t('select_cities')}
               isClearable
               isMulti
               formatOptionLabel={(data) => (
@@ -173,7 +174,7 @@ export default function SearchBar({ state, dispatch, setSearchParams }) {
                   payload: { category_alias: option ? option.value : "" }
                 });
               }}
-              placeholder="Select category..."
+              placeholder = {t('select_category')}
               isClearable
               formatOptionLabel={(data) => (
                 <div className="flex items-center gap-2">
@@ -199,7 +200,7 @@ export default function SearchBar({ state, dispatch, setSearchParams }) {
                   payload: { service_category_alias: option ? option.value : "" }
                 });
               }}
-              placeholder="Select service..."
+              placeholder = {t('select_service_type')}
               isClearable
               formatOptionLabel={(data) => (
                 <div className="flex items-center gap-2">
@@ -229,7 +230,7 @@ export default function SearchBar({ state, dispatch, setSearchParams }) {
                 });
                 debouncedApplyFiltersToURL();
               }}
-              placeholder="Search for providers, services, or keywords..."
+              placeholder={t('search')}
               className="w-full border border-gray-300 bg-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 placeholder-gray-400"
             />
           </div>
@@ -239,18 +240,10 @@ export default function SearchBar({ state, dispatch, setSearchParams }) {
               <FiSliders className="inline mr-2 text-gray-500" />
               {t('sort_by')}
             </label>
-            <Select
-              options={state.sortOptions}
-              value={state.sortOptions.find(opt => opt.value === state.filters.sort) || null}
-              onChange={(option) => {
-                dispatch({
-                  type: "UPDATE_FILTER",
-                  payload: { sort: option ? option.value : "" }
-                });
-              }}
-              placeholder="Sort results..."
-              isClearable
-              styles={customSelectStyles}
+            <SortSelect 
+              state={state}
+              dispatch={dispatch}
+              customSelectStyles={customSelectStyles}
             />
           </div>
 

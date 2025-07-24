@@ -10,14 +10,14 @@ export const initialServiceState = {
     dislikes: [],
     favourites: [],
     sortOptions: [
-        { value: 'promoted', label: 'Promoted First' },
-        { value: 'reviews_desc', label: 'Reviews: High to Low' },
-        { value: 'reviews_asc', label: 'Reviews: Low to High' },
-        { value: 'views_desc', label: 'Views: High to Low' },
-        { value: 'views_asc', label: 'Views: Low to High' },
-        { value: 'likes_desc', label: 'Likes: High to Low' },
-        { value: 'likes_asc', label: 'Likes: Low to High' }
-    ],
+        { value: 'promoted', label: 'sort.promoted' },
+        { value: 'reviews_desc', label: 'sort.reviews_desc' },
+        { value: 'reviews_asc', label: 'sort.reviews_asc' },
+        { value: 'views_desc', label: 'sort.views_desc' },
+        { value: 'views_asc', label: 'sort.views_asc' },
+        { value: 'likes_desc', label: 'sort.likes_desc' },
+        { value: 'likes_asc', label: 'sort.likes_asc' }
+    ],    
     filters: {
         city_alias: "",
         category_alias: "",

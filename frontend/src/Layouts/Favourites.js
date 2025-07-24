@@ -4,6 +4,7 @@ import ServiceProviderCard from '../Components/Home/ServiceProviderCard';
 import SEO from '../Components/Auth/Shared/SEO';
 import apiService from '../Services/apiService';
 import { FaSpinner } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 // Helper to get cached providers from localStorage
 function getCachedProviders(ids) {
@@ -25,6 +26,7 @@ export default function Favourites() {
   const { isAuthenticated, authChecked } = useAuth();
   const [providers, setProviders] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { t } = useTranslation();
 
   // Toggle favourite for guest users
   const toggleFavourite = useCallback((providerId) => {
@@ -87,7 +89,9 @@ export default function Favourites() {
         image="https://yourdomain.com/og-image.jpg"
       />
       <div className="p-6 bg-white rounded-t-lg">
-        <h1 className="text-3xl font-bold mb-6 text-gray-800 text-center">Your Favourites</h1>
+        <h1 className="text-3xl font-bold mb-6 text-gray-800 text-center">
+          {t('favourites')}
+        </h1>
         {loading ? (
           <div className="flex justify-center items-center py-12">
             <FaSpinner className="animate-spin text-3xl text-blue-600" />

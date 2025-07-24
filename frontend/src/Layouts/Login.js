@@ -2,11 +2,10 @@ import SEO from '../Components/Auth/Shared/SEO';
 import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { FiMail, FiLock } from 'react-icons/fi';
-import { FcGoogle } from 'react-icons/fc';
-import { FaFacebook } from 'react-icons/fa';
 import { useAuth } from "../Context/AuthContext";
 import { useLoginForm } from "../Models/useLoginForm";
 import { useTranslation } from 'react-i18next';
+import { FaSpinner } from 'react-icons/fa';
 
 export default function Login() {
   const { user, authChecked, login } = useAuth();
@@ -33,7 +32,12 @@ export default function Login() {
 
 
   if (!authChecked) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex justify-center items-center p-6">
+        <FaSpinner className="animate-spin text-2xl text-blue-600" />
+        <span className="ml-2">{t('loading')}</span>
+      </div>
+    )
   }
 
   return (
@@ -54,7 +58,7 @@ export default function Login() {
               {t('email')}
             </label>
             <input
-              {...register("email")} 
+              {...register("email")}
               placeholder="Email"
               className="w-full pl-10 pr-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
@@ -68,8 +72,8 @@ export default function Login() {
               {t('password')}
             </label>
             <input
-              {...register("password")} 
-              placeholder="Password" 
+              {...register("password")}
+              placeholder="Password"
               type="password"
               className="w-full pl-10 pr-3 py-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
