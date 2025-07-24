@@ -144,7 +144,7 @@ export default function Service() {
           url={canonicalUrl}
           image={image}
         />
-        <div className=" p-6 bg-white rounded-t-lg">
+        <div className=" p-6 bg-white">
           <div className="flex justify-center items-center p-6">
             <FaSpinner className="animate-spin text-2xl text-blue-600" />
           </div>
@@ -167,7 +167,7 @@ export default function Service() {
         url={canonicalUrl}
         image={image}
       />
-      <div className="bg-white rounded-t-lg p-2 sm:p-4 md:p-6 lg:p-8">
+      <div className="bg-white p-2 sm:p-4 md:p-6 lg:p-8">
         <SearchBar 
           state={state} 
           dispatch={dispatch}

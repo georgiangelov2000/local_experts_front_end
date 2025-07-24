@@ -74,7 +74,7 @@ export default function Favourites() {
   if (!authChecked) return null;
   if (isAuthenticated) {
     return (
-      <div className="p-6 bg-white rounded-t-lg text-center text-gray-500">
+      <div className="p-6 bg-white text-center text-gray-500">
         Favourites are only available for guests.
       </div>
     );
@@ -88,7 +88,7 @@ export default function Favourites() {
         url="https://yourdomain.com/favourites"
         image="https://yourdomain.com/og-image.jpg"
       />
-      <div className="p-6 bg-white rounded-t-lg">
+      <div className="p-6 bg-white">
         <h1 className="text-3xl font-bold mb-6 text-gray-800 text-center">
           {t('favourites')}
         </h1>
