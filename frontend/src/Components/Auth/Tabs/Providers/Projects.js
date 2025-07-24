@@ -84,7 +84,7 @@ export default function Projects({ data }) {
             <div className="flex-1">
               <label className="block text-xs font-medium text-gray-500 mb-1">{t('date_start')}</label>
               <input
-                type="datetime-local"
+                type="date"
                 {...register(`projects.${index}.date_start`)}
                 className="w-full border border-gray-300 rounded p-2 text-sm"
               />
@@ -92,7 +92,7 @@ export default function Projects({ data }) {
             <div className="flex-1">
               <label className="block text-xs font-medium text-gray-500 mb-1">{t('date_end')}</label>
               <input
-                type="datetime-local"
+                type="date"
                 {...register(`projects.${index}.date_end`)}
                 className="w-full border border-gray-300 rounded p-2 text-sm"
               />
