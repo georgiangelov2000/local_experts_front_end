@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { FiMapPin, FiEye, FiThumbsUp, FiThumbsDown, FiHeart, FiStar, FiAward, FiUsers, FiClock } from 'react-icons/fi';
+import { FiMapPin, FiEye, FiThumbsUp, FiThumbsDown, FiHeart, FiStar, FiAward, FiClock } from 'react-icons/fi';
 import { FaStar, FaRegStar, FaStarHalfAlt, FaThumbsUp, FaThumbsDown, FaHeart } from 'react-icons/fa';
 import useProviderActions from "../../../Hooks/useProviderActions";
 import { useAuth } from "../../../Context/AuthContext";
