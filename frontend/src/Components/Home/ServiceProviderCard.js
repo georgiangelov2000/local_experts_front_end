@@ -44,7 +44,7 @@ export default function ServiceProviderCard({
   const isFavourited = favourites && favourites.includes(provider.id);
 
   return (
-    <div className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1">
+    <div className="h-150 group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1">
       <Link
         to={`/providers/${provider.alias}`}
         className="block hover:no-underline"
@@ -91,7 +91,7 @@ export default function ServiceProviderCard({
         </div>
 
         {/* Content */}
-        <div className="p-5 space-y-4">
+        <div className="p-5 space-y-3">
           {/* Business Name */}
           <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200 line-clamp-1">
             {provider.business_name}

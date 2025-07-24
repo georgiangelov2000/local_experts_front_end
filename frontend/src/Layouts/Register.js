@@ -283,12 +283,12 @@ export default function Register() {
               </button>
             </form>
           )}
-          <div className="my-8 flex items-center justify-center">
+          {/* <div className="my-8 flex items-center justify-center">
             <span className="h-px flex-1 bg-gray-200" />
             <span className="px-4 text-gray-400 text-sm font-medium">{t('or_sign_up_with')}</span>
             <span className="h-px flex-1 bg-gray-200" />
-          </div>
-          <div className="flex flex-col md:flex-row gap-2 md:gap-4 justify-center">
+          </div> */}
+          {/* <div className="flex flex-col md:flex-row gap-2 md:gap-4 justify-center">
             <button
               type="button"
               onClick={() => handleSocialRegister('google')}
@@ -307,7 +307,7 @@ export default function Register() {
               <FaFacebook className="text-xl" />
               {t('continue_with_meta')}
             </button>
-          </div>
+          </div> */}
           {socialLoading && <div className="text-center text-blue-600 mt-2">{t('loading_social_profile')}</div>}
           <div className="mt-6 text-center">
             <Link to="/" className="text-blue-600 hover:underline text-sm">← {t('go_back_to_home')}</Link>

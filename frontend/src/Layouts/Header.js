@@ -47,7 +47,7 @@ export default function Header() {
               </div>
               <div className="hidden sm:block">
                 <span className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-200">
-                  Local Experts
+                  {t('footer.brand_name')}
                 </span>
                 <p className="text-xs text-gray-500 -mt-1">{t('find_your_perfect_match')}</p>
               </div>
