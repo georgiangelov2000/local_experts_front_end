@@ -73,7 +73,7 @@ export default function Header() {
               </Link>
             )}
             {/* Language Switcher */}
-            <div className="relative ml-4">
+            {/* <div className="relative ml-4">
               <select
                 value={i18n.language}
                 onChange={e => i18n.changeLanguage(e.target.value)}
@@ -89,7 +89,7 @@ export default function Header() {
               <span className="absolute left-2 top-1/2 transform -translate-y-1/2 pointer-events-none text-lg">
                 {languageOptions.find(opt => opt.value === i18n.language)?.flag}
               </span>
-            </div>
+            </div> */}
           </nav>
 
           {/* User Menu / Auth Buttons */}

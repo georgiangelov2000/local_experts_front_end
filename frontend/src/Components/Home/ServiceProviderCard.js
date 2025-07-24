@@ -192,7 +192,7 @@ export default function ServiceProviderCard({
             {user && (
               <>
                 <button
-                  className="p-2 rounded-full hover:bg-red-100 transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-300"
+                  className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-300"
                   onClick={(e) => {
                     e.preventDefault();
                     toggleDislike();
@@ -202,11 +202,11 @@ export default function ServiceProviderCard({
                   {isDisliked ? (
                     <FaThumbsDown className="text-red-500 text-sm" />
                   ) : (
-                    <FiThumbsDown className="text-gray-400 hover:text-red-500 text-sm" />
+                    <FiThumbsDown className="text-gray-400 text-sm" />
                   )}
                 </button>
                 <button
-                  className="p-2 rounded-full hover:bg-green-100 transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-300"
+                  className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-300"
                   onClick={(e) => {
                     e.preventDefault();
                     toggleLike();
@@ -226,13 +226,13 @@ export default function ServiceProviderCard({
           <button
             aria-label={isFavourite ? 'Remove from favorites' : 'Add to favorites'}
             onClick={toggleFavourite}
-            className={`p-2 rounded-full hover:bg-yellow-100 transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-yellow-300 ${isFavourite ? 'bg-yellow-100' : ''}`}
+            className={`p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-yellow-300 ${isFavourite ? 'bg-yellow-100' : ''}`}
             title={isFavourite ? 'Remove from favorites' : 'Add to favorites'}
           >
             {isFavourite ? (
               <FaHeart className="text-yellow-500 text-sm" />
             ) : (
-              <FiHeart className="text-gray-400 hover:text-yellow-500 text-sm" />
+              <FiHeart className="text-gray-400 text-sm" />
             )}
           </button>
         </div>
