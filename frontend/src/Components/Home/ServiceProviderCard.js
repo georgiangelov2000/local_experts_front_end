@@ -42,7 +42,7 @@ export default function ServiceProviderCard({
   };
 
   return (
-    <div className="h-150 group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1">
+    <div className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1">
       <Link
         to={`/providers/${provider.alias}`}
         className="block hover:no-underline"

@@ -45,7 +45,7 @@ export default function RelatedProviders({ providers = [] }) {
           return (
             <div
               key={provider.id}
-              className="group bg-white lg:rounded-xl lg:shadow-sm lg:border lg:border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 overflow-hidden"
+              className="group lg:rounded-xl lg:shadow-sm lg:border lg:border-gray-100 hover:shadow-lg hover:border-blue-200 transition-all duration-300 overflow-hidden"
             >
               {/* Image Section */}
               <div className="relative h-48 overflow-hidden">
